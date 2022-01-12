@@ -169,7 +169,7 @@ def contacts(_, message):
 @app.on_message(filters.chat(tg_id.files) & filters.document)
 def contacts(_, message):
     app.send_message(chat_id=tg_id.files,
-                     text=f'{message.document.file_id}, {message.message_id}')
+                     text=f'{message.document.file_id}')
 
 
 @app.on_message(filters.chat('me') & filters.document)
