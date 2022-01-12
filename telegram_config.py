@@ -20,7 +20,7 @@ class Telegram_ID:
 	woman: str = 'BAACAgIAAxkBAAECJm5h3PUhXAIOIZ56454qxeHgr9yeuwAC1hAAAtK4sEvpb1QeIWGiIB4E'  # Гайд по женской психике
 	gift: str = 'BQACAgIAAxkBAAECJnBh3PV4wAc0l35WoxyHaIXQbmeYpQACoBUAAhbW8UvYbO3wOAvNBh4E'  # Гайд по подарку по чертам лица
 	armor: str = 'BAACAgIAAxkBAAECJv5h3R0vZrGdMXC4V0rBTrqcMRJucwACwgwAAhxtkEu_pzXIZTRxSx4E'  # Шлюхоброня 2.0
-	telemetry: str = 'BQACAgIAAxkBAAECKF1h3h25lFA2AxtCbfmLXBpV1skGGQACQBYAApl58UrvY3YhGnqNsx4E'  # Программа для спектрального анализа
+	telemetry: str = 'BQACAgIAAxkBAAECKJ5h3nAuVpwC89OBkQxvIm41Dlb-IQACQBYAApl58UrvY3YhGnqNsx4E'  # Программа для спектрального анализа
 
 
 tg_id = Telegram_ID()
