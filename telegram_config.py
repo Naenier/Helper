@@ -6,6 +6,7 @@ from dataclasses import dataclass
 class Telegram_ID:
 	chat_id: str = '-1001631451746'
 	sale_mentor: str = '1775652016'
+	files: str = '-1001778163472'
 
 	trafik_expert: str = '816994285'  # Татьяна Геньсьор
 	krylova_gv: str = '302507861'  # Евгения Крылова

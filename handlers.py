@@ -156,9 +156,9 @@ def telemetry(_, message):
     chat = message.chat.id
     app.delete_messages(chat, message.message_id)
     app.send_message(chat, msg.telemetry)
-    app.send_document(chat_id=chat,
-                      document=open('Files/setup.exe', 'rb'),
-                      caption='Установи эту программу на компьютер с веб-камерой, запустив файл')
+    app.forward_messages(chat_id=chat,
+                         from_chat_id=tg_id.files,
+                         message_ids=message.message_id)
 
 
 @app.on_message(filters.chat('me') & filters.video)
