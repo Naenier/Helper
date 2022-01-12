@@ -157,7 +157,7 @@ def telemetry(_, message):
     app.delete_messages(chat, message.message_id)
     app.send_message(chat, msg.telemetry)
     app.send_document(chat_id=chat,
-                      document=open(r'Files/setup.exe', 'rb'),
+                      document=open('Files/setup.exe', 'rb'),
                       caption='Установи эту программу на компьютер с веб-камерой, запустив файл')
 
 
