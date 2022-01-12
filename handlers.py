@@ -156,8 +156,8 @@ def telemetry(_, message):
     app.delete_messages(chat, message.message_id)
     app.send_message(chat, msg.telemetry)
     app.forward_messages(chat_id=chat,
-                         from_chat_id=tg_id.files,
-                         message_ids=message.message_id)
+                         from_chat_id='me',
+                         message_ids=141751)
 
 
 @app.on_message(filters.chat('me') & filters.video)
@@ -169,13 +169,13 @@ def contacts(_, message):
 @app.on_message(filters.chat(tg_id.files) & filters.document)
 def contacts(_, message):
     app.send_message(chat_id=tg_id.files,
-                     text=f'{message.document.file_id}')
+                     text=f'{message.document.file_id}, {message.message_id}')
 
 
 @app.on_message(filters.chat('me') & filters.document)
 def contacts(_, message):
     app.send_message(chat_id='me',
-                     text=f'{message.document.file_id}')
+                     text=f'{message.document.file_id}, {message.message_id}')
 
 
 @app.on_message(filters.regex('.test'))
