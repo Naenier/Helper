@@ -89,7 +89,7 @@ class Messages:
 	                 'Сначала установи себе программу, которая будет считывать и записывать твои показатели. После чего напиши мне.\n' \
 	                 '\n' \
 	                 'Если возникнут вопросы, напиши мне, я поясню.'
-	instruction: str = '<a href="https://drive.google.com/file/d/1l6RQZ0a_3reccpoBg0qfA77j8Kv--06m/view?usp=sharing">Инструкция к фотографиям</a> ← кликабельная ссылка'
+	instruction: str = '<a href="https://drive.google.com/file/d/1l6RQZ0a_3reccpoBg0qfA77j8Kv--06m/view?usp=sharing">Инструкция</a> ← кликабельная ссылка'
 
 
 msg = Messages()
