@@ -1,4 +1,3 @@
-from . import Files
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
 from pyrogram.types import ChatPermissions
@@ -165,6 +164,12 @@ def telemetry(_, message):
 def contacts(_, message):
     app.send_message(chat_id='me',
                      text=f'{message.video.file_id}')
+
+
+@app.on_message(filters.chat(tg_id.files) & filters.document)
+def contacts(_, message):
+    app.send_message(chat_id=tg_id.files,
+                     text=f'{message.document.file_id}, {message.message_id}')
 
 
 @app.on_message(filters.chat('me') & filters.document)
