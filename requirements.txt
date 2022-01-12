@@ -1,1 +1,2 @@
-pyrogram
+pyrogram~=1.2.20
+schedule~=1.1.0
