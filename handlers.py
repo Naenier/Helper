@@ -79,6 +79,15 @@ def accelerator(_, message):
                      disable_web_page_preview=True)
 
 
+@app.on_message(filters.command("instruction", prefixes="."))
+def instruction(_, message):
+    chat = message.chat.id
+    app.delete_messages(chat, message.message_id)
+    app.send_message(chat_id=chat,
+                     text=msg.instruction,
+                     disable_web_page_preview=True)
+
+
 @app.on_message(filters.command("self", prefixes="."))
 def self(_, message):
     chat = message.chat.id
