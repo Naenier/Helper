@@ -15,43 +15,43 @@ app = Client("my_account")
 
 @app.on_message(filters.regex("Регистрация") & ~filters.me)
 def message_id(_, message):
-    if message.chat.type in "private":
+    if message.chat.type not in "private":
+        return
+    next_id = message.message_id + 1
+    app.send_message(chat_id=message.from_user.id, text='Запрос принят')
+    perc = 0
 
-        next_id = message.message_id + 1
-        app.send_message(chat_id=message.from_user.id, text='Запрос принят')
-        perc = 0
+    while perc < 100:
+        try:
+            text = "Идет сбор данных..." + str(perc) + "%"
+            app.edit_message_text(chat_id=message.from_user.id, message_id=next_id, text=text)
 
-        while perc < 100:
-            try:
-                text = "Идет сбор данных..." + str(perc) + "%"
-                app.edit_message_text(chat_id=message.from_user.id, message_id=next_id, text=text)
+            perc += random.randint(10, 17)
+            sleep(0.1)
 
-                perc += random.randint(10, 17)
-                sleep(0.1)
+        except FloodWait as e:
+            sleep(e.x)
 
-            except FloodWait as e:
-                sleep(e.x)
+    app.edit_message_text(chat_id=message.from_user.id, message_id=next_id, text="🟢 Завершено")
+    sleep(1)
 
-        app.edit_message_text(chat_id=message.from_user.id, message_id=next_id, text="🟢 Завершено")
-        sleep(1)
+    app.edit_message_text(chat_id=message.from_user.id, message_id=next_id, text="🔜 Регистрация...")
+    perc = 0
 
-        app.edit_message_text(chat_id=message.from_user.id, message_id=next_id, text="🔜 Регистрация...")
-        perc = 0
+    while perc < 100:
+        try:
+            text = "🔜 Регистрация..." + str(perc) + "%"
+            app.edit_message_text(chat_id=message.from_user.id, message_id=next_id, text=text)
 
-        while perc < 100:
-            try:
-                text = "🔜 Регистрация..." + str(perc) + "%"
-                app.edit_message_text(chat_id=message.from_user.id, message_id=next_id, text=text)
+            perc += random.randint(1, 5)
+            sleep(0.1)
 
-                perc += random.randint(1, 5)
-                sleep(0.1)
+        except FloodWait as e:
+            sleep(e.x)
 
-            except FloodWait as e:
-                sleep(e.x)
-
-        app.edit_message_text(chat_id=message.from_user.id, message_id=next_id, text="🟢 Спасибо. Ты успешно зарегестрирован в системе.\n"
-                                                                                     "**Это автоматическое сообщение бота**", parse_mode="markdown")
-        app.send_message('me', f'Пользователь зарегестрирован @{message.from_user.username} {message.from_user.id}')
+    app.edit_message_text(chat_id=message.from_user.id, message_id=next_id, text="🟢 Спасибо. Ты успешно зарегестрирован в системе.\n"
+                                                                                 "**Это автоматическое сообщение бота**", parse_mode="markdown")
+    app.send_message('me', f'Пользователь зарегестрирован @{message.from_user.username} {message.from_user.id}')
 
 
 @app.on_message(filters.command("help", prefixes="."))
@@ -196,7 +196,7 @@ def funcs(_, message):
 
 
 @app.on_message(filters.command("chats", prefixes=".") & filters.me)
-def chats(_, message):
+def chats(_, message):  # sourcery skip: dict-comprehension, move-assign-in-block
     app.delete_messages(tg_id.chat_id, message.message_id)
     chat = tg_id.chat_id
     people = {}
@@ -242,41 +242,42 @@ def avtootvet(_, message):
 
 @app.on_message(filters.regex("22212221") & ~filters.me)
 def avtootvet(_, message):
-    if message.chat.type in "private":
-        next_id = message.message_id + 1
-        app.send_message(chat_id=message.from_user.id, text='Секунду...')
-        perc = 0
+    if message.chat.type not in "private":
+        return
+    next_id = message.message_id + 1
+    app.send_message(chat_id=message.from_user.id, text='Секунду...')
+    perc = 0
 
-        while perc < 100:
-            try:
-                text = "🧭 Идёт поиск файла ..." + str(perc) + "%"
-                app.edit_message_text(chat_id=message.from_user.id, message_id=next_id, text=text)
+    while perc < 100:
+        try:
+            text = "🧭 Идёт поиск файла ..." + str(perc) + "%"
+            app.edit_message_text(chat_id=message.from_user.id, message_id=next_id, text=text)
 
-                perc += random.randint(3, 6)
-                sleep(0.1)
+            perc += random.randint(3, 6)
+            sleep(0.1)
 
-            except FloodWait as e:
-                sleep(e.x)
+        except FloodWait as e:
+            sleep(e.x)
 
-        app.edit_message_text(chat_id=message.from_user.id, message_id=next_id, text="🟢 Файл найден!")
-        sleep(1)
+    app.edit_message_text(chat_id=message.from_user.id, message_id=next_id, text="🟢 Файл найден!")
+    sleep(1)
 
-        app.edit_message_text(chat_id=message.from_user.id, message_id=next_id, text="🔜 Отправляю файл ...")
-        perc = 0
+    app.edit_message_text(chat_id=message.from_user.id, message_id=next_id, text="🔜 Отправляю файл ...")
+    perc = 0
 
-        while perc < 100:
-            try:
-                text = "🔜 Отправляю файл ..." + str(perc) + "%"
-                app.edit_message_text(chat_id=message.from_user.id, message_id=next_id, text=text)
+    while perc < 100:
+        try:
+            text = "🔜 Отправляю файл ..." + str(perc) + "%"
+            app.edit_message_text(chat_id=message.from_user.id, message_id=next_id, text=text)
 
-                perc += random.randint(1, 5)
-                sleep(0.1)
+            perc += random.randint(1, 5)
+            sleep(0.1)
 
-            except FloodWait as e:
-                sleep(e.x)
+        except FloodWait as e:
+            sleep(e.x)
 
-        app.edit_message_text(chat_id=message.from_user.id, message_id=next_id, text="🟢 Файл отправлен!")
-        app.send_message('me', f'Пользователь скачал файл @{message.from_user.username} {message.from_user.id}')
+    app.edit_message_text(chat_id=message.from_user.id, message_id=next_id, text="🟢 Файл отправлен!")
+    app.send_message('me', f'Пользователь скачал файл @{message.from_user.username} {message.from_user.id}')
 
 
 @app.on_message(filters.voice_chat_started & filters.chat(tg_id.chat_id))
@@ -306,8 +307,11 @@ def voice_chat_scheduled(_, message):
 
 @app.on_message(filters.voice_chat_ended & filters.chat(tg_id.chat_id))
 def voice_chat_started(_, message):
-    app.send_message(chat_id=tg_id.chat_id, text=f"Созвон завершён."
-                                                 f"\nВсе, кто был на созвоне - вы молодцы!")
+    app.send_message(
+        chat_id=tg_id.chat_id,
+        text='Созвон завершён.\nВсе, кто был на созвоне - вы молодцы!',
+    )
+
     app.send_poll(
         chat_id=tg_id.chat_id,
         question='f"Оставьте свою обратную связь по прошедшему созвону...',
