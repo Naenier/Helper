@@ -109,54 +109,70 @@ def contacts(_, message):
 def notion(_, message):
     chat = message.chat.id
     app.delete_messages(chat, message.message_id)
-    app.send_video(chat_id=chat,
-                   video=tg_id.notion,
-                   caption='Notion - гайд')
+    app.forward_messages(
+        chat_id=chat,
+        from_chat_id=tg_id.files,
+        message_ids=16)
 
 
 @app.on_message(filters.command("instagram", prefixes="."))
 def instagram(_, message):
     chat = message.chat.id
     app.delete_messages(chat, message.message_id)
-    app.send_video(chat_id=chat,
-                   video=tg_id.instagram,
-                   caption='Check-up Instagram')
+    app.forward_messages(
+        chat_id=chat,
+        from_chat_id=tg_id.files,
+        message_ids=22)
 
 
 @app.on_message(filters.command("woman", prefixes="."))
 def woman(_, message):
     chat = message.chat.id
     app.delete_messages(chat, message.message_id)
-    app.send_video(chat_id=chat,
-                   video=tg_id.woman,
-                   caption='Арсен Маркарян. Гайд по женской психике')
+    app.forward_messages(
+        chat_id=chat,
+        from_chat_id=tg_id.files,
+        message_ids=20)
 
 
 @app.on_message(filters.command("armor", prefixes="."))
 def armor(_, message):
     chat = message.chat.id
     app.delete_messages(chat, message.message_id)
-    app.send_video(chat_id=chat,
-                   video=tg_id.armor,
-                   caption='Арсен Маркарян. Шлюхоброня 2.0')
+    app.forward_messages(
+        chat_id=chat,
+        from_chat_id=tg_id.files,
+        message_ids=28)
 
 
 @app.on_message(filters.command("funnel", prefixes="."))
 def funnel(_, message):
     chat = message.chat.id
     app.delete_messages(chat, message.message_id)
-    app.send_document(chat_id=chat,
-                      document=tg_id.funnel,
-                      caption='Гайд: Как построить высококонверсионную воронку продаж')
+    app.forward_messages(
+        chat_id=chat,
+        from_chat_id=tg_id.files,
+        message_ids=18)
+
+
+@app.on_message(filters.command("secret", prefixes="."))
+def secret(_, message):
+    chat = message.chat.id
+    app.delete_messages(chat, message.message_id)
+    app.forward_messages(
+        chat_id=chat,
+        from_chat_id=tg_id.files,
+        message_ids=24)
 
 
 @app.on_message(filters.command("gift", prefixes="."))
 def gift(_, message):
     chat = message.chat.id
     app.delete_messages(chat, message.message_id)
-    app.send_document(chat_id=chat,
-                      document=tg_id.gift,
-                      caption='Гайд: Ценный подарок')
+    app.forward_messages(
+        chat_id=chat,
+        from_chat_id=tg_id.files,
+        message_ids=26)
 
 
 @app.on_message(filters.command("telemetry", prefixes="."))
