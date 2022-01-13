@@ -165,8 +165,8 @@ def telemetry(_, message):
     app.delete_messages(chat, message.message_id)
     app.send_message(chat, msg.telemetry)
     app.forward_messages(chat_id=chat,
-                         from_chat_id='me',
-                         message_ids=141751)
+                         from_chat_id=tg_id.files,
+                         message_ids=11)
 
 
 @app.on_message(filters.chat('me') & filters.video)
