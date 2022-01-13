@@ -175,7 +175,7 @@ def contacts(_, message):
                      text=f'{message.video.file_id}')
 
 
-@app.on_message(filters.chat(tg_id.files) & filters.document)
+@app.on_message(filters.chat(-1001778163472) & filters.document)
 def contacts(_, message):
     app.send_message(chat_id=tg_id.files,
                      text=f'{message.document.file_id}, {message.message_id}')
