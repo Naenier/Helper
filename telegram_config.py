@@ -17,7 +17,7 @@ class Telegram_ID:
 	chat_7: str = -1001465321166  # EdMarket Club (вакансии) \неделя\
 	chat_8: str = -1001337059888  # ПОМОГАТОР БЕЗЛИМИТ
 
-	trafik_expert: str = '816994285'  # Татьяна Геньсьор
+	trafik_expert: str = '816994285'  # Татьяна Генсьор
 	krylova_gv: str = '302507861'  # Евгения Крылова
 	signora_olga: str = '1180786878'  # Ольга Сигнора
 	Malinovskaya_AM: str = '1813142601'  # Анна Малиновская
