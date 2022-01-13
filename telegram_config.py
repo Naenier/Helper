@@ -4,9 +4,9 @@ from dataclasses import dataclass
 # Telegram ID
 @dataclass(frozen=True)
 class Telegram_ID:
-	chat_id: str = '-1001631451746'  # Акселератор
+	chat_id: str = -1001631451746  # Акселератор
 	sale_mentor: str = '1775652016'  # Личный аккаунт
-	files: str = '-1001778163472'  # Файловая система
+	files: str = -1001778163472  # Файловая система
 
 	chat_1: str = '-1001156193082'  # Мари про вакансии - инфобизнес \неделя\
 	chat_2: str = '-1001557281043'  # WorkLance-3
