@@ -175,6 +175,16 @@ def gift(_, message):
         message_ids=26)
 
 
+@app.on_message(filters.command("testosterone", prefixes="."))
+def testosterone(_, message):
+    chat = message.chat.id
+    app.delete_messages(chat, message.message_id)
+    app.forward_messages(
+        chat_id=chat,
+        from_chat_id=tg_id.files,
+        message_ids=30)
+
+
 @app.on_message(filters.command("telemetry", prefixes="."))
 def telemetry(_, message):
     chat = message.chat.id
