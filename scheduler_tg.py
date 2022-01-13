@@ -63,5 +63,37 @@ class Schedule_Message:
 	def mentoring_gavrilova_v_smm_2():
 		app.send_message(tg_id.gavrilova_v_smm, msg.notification_one_hour)
 
+	@staticmethod
+	def chats_message_1():
+		app.send_message(tg_id.chat_1, msg.self_presentation_url_hash)
+
+	@staticmethod
+	def chats_message_2():
+		app.send_message(tg_id.chat_2, msg.self_presentation_hash)
+
+	@staticmethod
+	def chats_message_3():
+		app.send_message(tg_id.chat_3, msg.self_presentation_hash)
+
+	@staticmethod
+	def chats_message_4():
+		app.send_message(tg_id.chat_4, msg.self_presentation_hash)
+
+	@staticmethod
+	def chats_message_5():
+		app.send_message(tg_id.chat_5, msg.self_presentation_hash)
+
+	@staticmethod
+	def chats_message_6():
+		app.send_message(tg_id.chat_6, msg.self_presentation_hash)
+
+	@staticmethod
+	def chats_message_7():
+		app.send_message(tg_id.chat_7, msg.self_presentation_hash)
+
+	@staticmethod
+	def chats_message_8():
+		app.send_message(tg_id.chat_8, msg.self_presentation_hash)
+
 
 sch_msg = Schedule_Message()
