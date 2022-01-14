@@ -12,6 +12,10 @@ class Schedule_Message:
 		app.send_message(tg_id.chat_id, msg.notification_rnp)
 
 	@staticmethod
+	def X10():
+		app.send_message(tg_id.chat_id, msg.notification_x10)
+
+	@staticmethod
 	def mentoring_trafik_expert_1():
 		app.send_message(tg_id.trafik_expert, msg.notification_two_hour)
 
