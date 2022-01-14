@@ -13,7 +13,7 @@ class Schedule_Message:
 
 	@staticmethod
 	def X10():
-		app.send_message(tg_id.chat_id, msg.notification_x10)
+		app.send_message(tg_id.x10, msg.notification_x10)
 
 	@staticmethod
 	def mentoring_trafik_expert_1():
