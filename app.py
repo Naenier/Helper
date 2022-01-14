@@ -27,13 +27,13 @@ def run():
     schedule.every().friday.at("08:30").do(sch_msg.mentoring_gavrilova_v_smm_1)
 
     # Рассылка Telegram
-    schedule.every().friday.at("08:30").do(sch_msg.chats_message_1)
+    schedule.every().friday.at("13:30").do(sch_msg.chats_message_1)
     schedule.every(16).minutes.do(sch_msg.chats_message_2)
     schedule.every(16).minutes.do(sch_msg.chats_message_3)
     schedule.every(61).minutes.do(sch_msg.chats_message_4)
     schedule.every(61).minutes.do(sch_msg.chats_message_5)
     schedule.every(16).minutes.do(sch_msg.chats_message_6)
-    schedule.every().friday.at("08:30").do(sch_msg.chats_message_7)
+    schedule.every().friday.at("13:30").do(sch_msg.chats_message_7)
     schedule.every(6).minutes.do(sch_msg.chats_message_8)
 
     while True:
