@@ -4,7 +4,6 @@ from dataclasses import dataclass
 # Messages
 @dataclass(frozen=True)
 class Messages:
-	good_morning: str = 'Доброе утро, дорогие!'
 	notification_one_hour: str = 'Напоминание.\n' \
 	                             'Через 30 минут у тебя будет созвон по наставничеству.\n' \
 	                             'Длительность созвона около часа.\nСсылку на Zoom пришлю сюда.'

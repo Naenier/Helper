@@ -9,7 +9,6 @@ from scheduler_tg import sch_msg
 
 def run():
     # Акселератор
-    schedule.every().day.at("08:00").do(sch_msg.gm_message)
     schedule.every().monday.at("09:00").do(sch_msg.RnP)
 
     # Mentoring X
