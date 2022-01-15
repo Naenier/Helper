@@ -15,7 +15,7 @@ def run():
     schedule.every().friday.at("12:00").do(sch_msg.X10)
 
     # Mentoring X
-    schedule.every().saturday.at("08:30").do(sch_msg.mentoring_trafik_expert_1)
+    schedule.every().wednesday.at("08:30").do(sch_msg.mentoring_trafik_expert_1)
     schedule.every().thursday.at("11:30").do(sch_msg.mentoring_trafik_expert_2)
     schedule.every().monday.at("13:30").do(sch_msg.mentoring_Rukishaaa_2)
     schedule.every().thursday.at("09:30").do(sch_msg.mentoring_Rukishaaa_1)
