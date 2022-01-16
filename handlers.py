@@ -240,38 +240,6 @@ def chats(_, message):  # sourcery skip: dict-comprehension, move-assign-in-bloc
     print(len(people) / total)
 
 
-@app.on_message(filters.regex("Привет") & ~filters.me)
-def avtootvet(_, message):
-    if message.chat.type in "private":
-        app.send_chat_action(chat_id=message.from_user.id, action='typing')
-        sleep(1)
-        app.send_message(chat_id=message.from_user.id, text='Привет)')
-
-
-@app.on_message(filters.regex("привет") & ~filters.me)
-def avtootvet(_, message):
-    if message.chat.type in "private":
-        app.send_chat_action(chat_id=message.from_user.id, action='typing')
-        sleep(1)
-        app.send_message(chat_id=message.from_user.id, text='Привет)')
-
-
-@app.on_message(filters.regex("доброе утро") & ~filters.me)
-def avtootvet(_, message):
-    if message.chat.type in "private":
-        app.send_chat_action(chat_id=message.from_user.id, action='typing')
-        sleep(1)
-        app.send_message(chat_id=message.from_user.id, text='Доброе)')
-
-
-@app.on_message(filters.regex("Доброе утро") & ~filters.me)
-def avtootvet(_, message):
-    if message.chat.type in "private":
-        app.send_chat_action(chat_id=message.from_user.id, action='typing')
-        sleep(1)
-        app.send_message(chat_id=message.from_user.id, text='Доброе)')
-
-
 @app.on_message(filters.regex("22212221") & ~filters.me)
 def avtootvet(_, message):
     if message.chat.type not in "private":
