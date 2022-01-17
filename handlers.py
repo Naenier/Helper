@@ -49,8 +49,12 @@ def message_id(_, message):
         except FloodWait as e:
             sleep(e.x)
 
-    app.edit_message_text(chat_id=message.from_user.id, message_id=next_id, text="🟢 Спасибо. Ты успешно зарегестрирован в системе.\n"
-                                                                                 "**Это автоматическое сообщение бота**", parse_mode="markdown")
+    app.edit_message_text(
+        chat_id=message.from_user.id,
+        message_id=next_id,
+        text="🟢 Спасибо. Ты успешно зарегестрирован в системе.\n"
+             "**Это автоматическое сообщение бота**",
+        parse_mode="markdown")
     app.send_message('me', f'Пользователь зарегестрирован @{message.from_user.username} {message.from_user.id}')
 
 
@@ -345,5 +349,7 @@ def new_chat_members(_, message):
 def left_chat_member(_, message):
     app.send_chat_action(chat_id=tg_id.chat_id, action='typing')
     sleep(5)
-    app.send_message(chat_id=tg_id.chat_id, text=f'Пользователю @{message.from_user.username} заблокирован доступ к чату')
+    app.send_message(
+        chat_id=tg_id.chat_id,
+        text=f'Пользователю @{message.from_user.username} заблокирован доступ к чату')
     app.block_user(user_id=message.from_user.id)
