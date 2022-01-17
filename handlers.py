@@ -13,7 +13,7 @@ from messages import msg
 app = Client("my_account")
 
 
-@app.on_message(filters.regex("Регистрация") & ~filters.me)
+@app.on_message(filters.regex("Mentoring X") & ~filters.me)
 def message_id(_, message):
     if message.chat.type not in "private":
         return
