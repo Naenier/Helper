@@ -16,54 +16,6 @@ class Schedule_Message:
 		app.send_message(tg_id.x10, msg.notification_x10)
 
 	@staticmethod
-	def mentoring_trafik_expert_1():
-		app.send_message(tg_id.trafik_expert, msg.notification_two_hour)
-
-	@staticmethod
-	def mentoring_trafik_expert_2():
-		app.send_message(tg_id.trafik_expert, msg.notification_one_hour)
-
-	@staticmethod
-	def mentoring_Rukishaaa_1():
-		app.send_message(tg_id.Rukishaaa, msg.notification_two_hour)
-
-	@staticmethod
-	def mentoring_Rukishaaa_2():
-		app.send_message(tg_id.Rukishaaa, msg.notification_one_hour)
-
-	@staticmethod
-	def mentoring_krylova_gv_1():
-		app.send_message(tg_id.krylova_gv, msg.notification_two_hour)
-
-	@staticmethod
-	def mentoring_krylova_gv_2():
-		app.send_message(tg_id.krylova_gv, msg.notification_one_hour)
-
-	@staticmethod
-	def mentoring_signora_olga_1():
-		app.send_message(tg_id.signora_olga, msg.notification_two_hour)
-
-	@staticmethod
-	def mentoring_signora_olga_2():
-		app.send_message(tg_id.signora_olga, msg.notification_one_hour)
-
-	@staticmethod
-	def mentoring_Malinovskaya_AM_1():
-		app.send_message(tg_id.Malinovskaya_AM, msg.notification_two_hour)
-
-	@staticmethod
-	def mentoring_Malinovskaya_AM_2():
-		app.send_message(tg_id.Malinovskaya_AM, msg.notification_one_hour)
-
-	@staticmethod
-	def mentoring_gavrilova_v_smm_1():
-		app.send_message(tg_id.gavrilova_v_smm, msg.notification_two_hour)
-
-	@staticmethod
-	def mentoring_gavrilova_v_smm_2():
-		app.send_message(tg_id.gavrilova_v_smm, msg.notification_one_hour)
-
-	@staticmethod
 	def chats_message_1():
 		app.send_message(tg_id.chat_1, msg.self_presentation_url_hash)
 

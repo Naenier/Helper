@@ -18,12 +18,5 @@ class Telegram_ID:
 	chat_7: str = -1001465321166  # EdMarket Club (вакансии) \неделя\
 	chat_8: str = -1001313032628  # WORK ON | HR | ФРИЛАНС ЧАТ
 
-	trafik_expert: str = '816994285'  # Татьяна
-	krylova_gv: str = '302507861'  # Евгения Крылова
-	signora_olga: str = '1180786878'  # Ольга Сигнора
-	Malinovskaya_AM: str = '1813142601'  # Анна Малиновская
-	Rukishaaa: str = '458814686'  # Рукият Дибирова
-	gavrilova_v_smm: str = '1341248686'  # Ксения Гаврилова
-
 
 tg_id = Telegram_ID()
