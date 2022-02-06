@@ -296,7 +296,7 @@ def voice_chat_scheduled(_, message):
     app.delete_messages(tg_id.chat_id, message.message_id)
     app.send_poll(
         chat_id=tg_id.chat_id,
-        question='Внимание,я запланировал аудиозвонок.\n'
+        question='Внимание, я запланировал аудиозвонок.\n'
                  'Кто будет?',
         options=list(['Точно буду',
                       'Постараюсь быть',
