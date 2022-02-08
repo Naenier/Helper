@@ -291,6 +291,11 @@ def voice_chat_started(_):
                                                  'Заходите')
 
 
+@app.on_message(filters.regex('self-presentation') & filters.me)
+def voice_chat_scheduled(_, message):
+    app.send_message(chat_id=tg_id.chat_id, text=msg.self_presentation)
+
+
 @app.on_message(filters.regex('vc-scheduled') & filters.chat(tg_id.chat_id) & filters.me)
 def voice_chat_scheduled(_, message):
     app.delete_messages(tg_id.chat_id, message.message_id)
