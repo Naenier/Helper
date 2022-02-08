@@ -286,6 +286,7 @@ def avtootvet(_, message):
 
 @app.on_message(filters.voice_chat_started & filters.chat(tg_id.chat_id))
 def voice_chat_started(_):
+    app.delete_messages(tg_id.chat_id, message.message_id)
     app.send_message(chat_id=tg_id.chat_id, text='ВНИМАНИЕ!\n'
                                                  'Созвон начался.\n'
                                                  'Заходите')
