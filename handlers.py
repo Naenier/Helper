@@ -294,7 +294,7 @@ def voice_chat_started(_, message):
 @app.on_message(filters.regex('self-presentation') & filters.me)
 def voice_chat_scheduled(_, message):
     app.delete_messages(chat_id=message.from_user.id, message_ids=message.message_id)
-    app.send_message(chat_id=message.from_user.id, text=msg.self_presentation)
+    app.send_message(chat_id=message.message_id, text=msg.self_presentation)
 
 
 @app.on_message(filters.regex('vc-scheduled') & filters.chat(tg_id.chat_id) & filters.me)
