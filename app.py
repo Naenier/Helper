@@ -11,9 +11,6 @@ def run():
     # Акселератор
     schedule.every().monday.at("09:00").do(sch_msg.RnP)
 
-    # Автоматическое прочтение истории
-    schedule.every(5).minutes.do(sch_msg.Autoread)
-
     # Рассылка Telegram
     schedule.every().friday.at("13:30").do(sch_msg.chats_message_1)
     schedule.every(64).minutes.do(sch_msg.chats_message_2)

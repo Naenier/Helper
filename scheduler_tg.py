@@ -1,6 +1,4 @@
 from dataclasses import dataclass
-from time import sleep
-
 from telegram_config import tg_id
 from messages import msg
 from handlers import app
@@ -12,25 +10,6 @@ class Schedule_Message:
 	@staticmethod
 	def RnP():
 		app.send_message(tg_id.chat_id, msg.notification_rnp)
-
-	@staticmethod
-	def Autoread():
-		app.read_history(tg_id.chat_1)
-		sleep(5)
-		app.read_history(tg_id.chat_2)
-		sleep(5)
-		app.read_history(tg_id.chat_3)
-		sleep(5)
-		app.read_history(tg_id.chat_4)
-		sleep(5)
-		app.read_history(tg_id.chat_5)
-		sleep(5)
-		app.read_history(tg_id.chat_6)
-		sleep(5)
-		app.read_history(tg_id.chat_7)
-		sleep(5)
-		app.read_history(tg_id.chat_8)
-		sleep(1)
 
 	@staticmethod
 	def X10():
