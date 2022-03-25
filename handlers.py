@@ -360,23 +360,3 @@ def left_chat_member(_, message):
         chat_id=tg_id.chat_id,
         text=f'Пользователю @{message.from_user.username} заблокирован доступ к чату')
     app.block_user(user_id=message.from_user.id)
-
-
-@app.on_message(filters.chat(tg_id.chat_5))
-def left_chat_member(_, message):
-    app.read_history(tg_id.chat_1)
-    sleep(5)
-    app.read_history(tg_id.chat_2)
-    sleep(5)
-    app.read_history(tg_id.chat_3)
-    sleep(5)
-    app.read_history(tg_id.chat_4)
-    sleep(5)
-    app.read_history(tg_id.chat_5)
-    sleep(5)
-    app.read_history(tg_id.chat_6)
-    sleep(5)
-    app.read_history(tg_id.chat_7)
-    sleep(5)
-    app.read_history(tg_id.chat_8)
-    sleep(1)
