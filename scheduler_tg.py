@@ -13,7 +13,7 @@ class Schedule_Message:
 
 	@staticmethod
 	def chats_message_1():
-		app.send_message(tg_id.chat_1, msg.self_presentation_url_hash)
+		app.send_message(tg_id.chat_1, msg.self_presentation_hash)
 
 	@staticmethod
 	def chats_message_2():
