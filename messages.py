@@ -79,7 +79,7 @@ class Messages:
 	                         '4. Ставим тактические задачи, необходимые для результата\n' \
 	                         '5. Обсуждаем недостающие компетенции при необходимости\n' \
 	                         '\n' \
-	                         'Чтобы записаться, жми — <a href="https://vk.com/soulssaler?w=app6013442_-211087266%2523form_id%253D1">Стратсессия</a>\n'
+	                         'Чтобы записаться, жми — <a href="https://vk.com/soulssaler?w=product-211087266_5248134%2Fquery">Стратсессия</a>\n'
 	contacts: str = '**Контакты:**\n' \
 	                '<a href="tg://user?id=869367908">Telegram</a>\n' \
 	                '<a href="https://www.instagram.com/ilya.mentor/">Instagram</a>\n' \
