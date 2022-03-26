@@ -10,6 +10,7 @@ from scheduler_tg import sch_msg
 def run():
     # Акселератор
     schedule.every().monday.at("09:00").do(sch_msg.RnP)
+    schedule.every(1).minutes.do(sch_msg.Test)
 
     # Рассылка Telegram
     schedule.every().friday.at("13:35").do(sch_msg.chats_message_1)

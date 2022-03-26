@@ -12,8 +12,8 @@ class Schedule_Message:
 		app.send_message(tg_id.chat_id, msg.notification_rnp)
 
 	@staticmethod
-	def X10():
-		app.send_message(tg_id.x10, msg.notification_x10)
+	def Test():
+		app.send_message(tg_id.chat_id_content, msg.notification_rnp)
 
 	@staticmethod
 	def chats_message_1():

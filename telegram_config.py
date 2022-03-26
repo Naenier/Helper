@@ -5,7 +5,7 @@ from dataclasses import dataclass
 @dataclass(frozen=True)
 class Telegram_ID:
 	chat_id: str = -1001631451746  # Акселератор
-	x10: str = -1001695701278  # X10
+	chat_id_content: str = -1001791209527  # Контент
 	sale_mentor: str = '1775652016'  # Личный аккаунт
 	files: str = -1001778163472  # Файловая система
 
