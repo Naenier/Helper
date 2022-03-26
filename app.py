@@ -11,7 +11,7 @@ def run():
     # Акселератор
     scheduler1 = schedule.Scheduler()
     scheduler1.every().monday.at("09:00").do(sch_msg.RnP)
-    scheduler1.every().sunday.at("05:03").do(sch_msg.Test)
+    scheduler1.every().saturday.at("05:03").do(sch_msg.Test)
 
     # Рассылка Telegram
     scheduler2 = schedule.Scheduler()
