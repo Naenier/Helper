@@ -8,12 +8,8 @@ from handlers import app
 @dataclass(frozen=True)
 class Schedule_Message:
 	@staticmethod
-	def RnP():
+	def RnP_notify():
 		app.send_message(tg_id.chat_id, msg.notification_rnp)
-
-	@staticmethod
-	def Test():
-		app.send_message(tg_id.chat_id_content, msg.notification_rnp)
 
 	@staticmethod
 	def chats_message_1():
