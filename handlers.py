@@ -400,3 +400,43 @@ def left_chat_member(_, message):
 @app.on_message(filters.chat(tg_id.chat_8))
 def left_chat_member(_, message):
     app.read_history(tg_id.chat_8)
+
+
+@app.on_message(filters.chat(tg_id.chat_9))
+def left_chat_member(_, message):
+    app.read_history(tg_id.chat_9)
+
+
+@app.on_message(filters.chat(tg_id.chat_10))
+def left_chat_member(_, message):
+    app.read_history(tg_id.chat_10)
+
+
+@app.on_message(filters.chat(tg_id.chat_11))
+def left_chat_member(_, message):
+    app.read_history(tg_id.chat_11)
+
+
+@app.on_message(filters.chat(tg_id.chat_12))
+def left_chat_member(_, message):
+    app.read_history(tg_id.chat_12)
+
+
+@app.on_message(filters.chat(tg_id.chat_13))
+def left_chat_member(_, message):
+    app.read_history(tg_id.chat_13)
+
+
+@app.on_message(filters.chat(tg_id.chat_14))
+def left_chat_member(_, message):
+    app.read_history(tg_id.chat_14)
+
+
+@app.on_message(filters.chat(tg_id.chat_15))
+def left_chat_member(_, message):
+    app.read_history(tg_id.chat_15)
+
+
+@app.on_message(filters.chat(tg_id.chat_16))
+def left_chat_member(_, message):
+    app.read_history(tg_id.chat_16)
