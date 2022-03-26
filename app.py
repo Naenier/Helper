@@ -12,7 +12,7 @@ def run():
     schedule.every().monday.at("09:00").do(sch_msg.RnP)
 
     # Рассылка Telegram
-    schedule.every().friday.at("13:30").do(sch_msg.chats_message_1)
+    schedule.every().friday.at("13:35").do(sch_msg.chats_message_1)
     schedule.every(64).minutes.do(sch_msg.chats_message_2)
     schedule.every(66).minutes.do(sch_msg.chats_message_3)
     schedule.every(62).minutes.do(sch_msg.chats_message_4)
