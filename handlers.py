@@ -15,6 +15,12 @@ app = Client("my_account")
 db = user_database('user_database.db')
 
 
+@app.on_message(filters.command("allusers", prefixes="."))
+def help_message(_, message):
+    for member in app.iter_chat_members(chat_id=tg_id.chat_id):
+        app.send_message("me", member.user.username)
+
+
 @app.on_message(filters.regex("Mentoring X") & ~filters.me)
 def message_id(_, message):
     if message.chat.type not in "private":
