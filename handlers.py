@@ -18,8 +18,11 @@ db = user_database('user_database.db')
 @app.on_message(filters.command("allusers", prefixes="."))
 def help_message(_, message):
     for member in app.iter_chat_members(chat_id=tg_id.chat_id):
-        app.send_message("me", member.user.username)
-        sleep(1)
+        if member == "":
+            pass
+        else:
+            app.send_message("me", member.user.username)
+            sleep(1)
 
 
 @app.on_message(filters.regex("Mentoring X") & ~filters.me)
