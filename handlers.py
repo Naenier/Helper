@@ -360,7 +360,7 @@ def new_chat_members(_, message):
         # если он уже есть, то блокируем и удаляем из чата
         db.update_subscription(message.from_user.id, False)
         app.block_user(user_id=message.from_user.id)
-        app.restrict_chat_member(chat_id=tg_id.chat_id, user_id=message.from_user.id, permissions=ChatPermissions())
+        app.ban_chat_member(chat_id=tg_id.chat_id, user_id=message.from_user.id)
         app.delete_messages(message.chat.id, message.message_id)
 
 
