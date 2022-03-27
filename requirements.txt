@@ -1,2 +1,4 @@
-pyrogram~=1.2.20
+pyrogram==1.4.9
 schedule~=1.1.0
+APScheduler==3.9.1
+SQLAlchemy==1.4.32

@@ -8,9 +8,11 @@ import random
 
 from telegram_config import tg_id
 from messages import msg
+from udb import user_database
 
 
 app = Client("my_account")
+db = user_database('user_database.db')
 
 
 @app.on_message(filters.regex("Mentoring X") & ~filters.me)
@@ -285,7 +287,7 @@ def avtootvet(_, message):
 
 
 @app.on_message(filters.voice_chat_started & filters.chat(tg_id.chat_id))
-def voice_chat_started(_, message):
+def voice_chat_started(_):
     app.send_message(chat_id=tg_id.chat_id, text='ВНИМАНИЕ!\n'
                                                  'Созвон начался.\n'
                                                  'Заходите')
@@ -339,17 +341,27 @@ def voice_chat_started(_, message):
                   options=0)
 
 
+# стартовая регистрация пользователя
 @app.on_message(filters.new_chat_members & filters.chat(tg_id.chat_id))
 def new_chat_members(_, message):
     mention = f'<a href="tg://user?id={message.from_user.id}">{message.from_user.first_name}</a>'
 
-    app.send_chat_action(chat_id=tg_id.chat_id, action='typing')
-    sleep(3)
-    app.send_message(chat_id=tg_id.chat_id,
-                     text=f'Приветствую тебя, {mention}!\n'
-                          f'Добро пожаловать в Акселератор!\n'
-                          f'Можешь кратко представиться.\n'
-                          f'**Чем ты можешь быть полезен(-на) и с какими вопросами к тебе можно обратиться?**')
+    if not db.subscriber_exists(message.from_user.id):
+        # если юзера нет в базе, добавляем его
+        db.add_subscriber(message.from_user.id, message.from_user.username, message.from_user.first_name, message.from_user.last_name)
+        app.send_chat_action(chat_id=tg_id.chat_id, action='typing')
+        sleep(3)
+        app.send_message(chat_id=tg_id.chat_id,
+                         text=f'Приветствую тебя, {mention}!\n'
+                              f'Добро пожаловать в Акселератор!\n'
+                              f'Можешь кратко представиться.\n'
+                              f'**Чем ты можешь быть полезен(-на) и с какими вопросами к тебе можно обратиться?**')
+    else:
+        # если он уже есть, то блокируем и удаляем из чата
+        db.update_subscription(message.from_user.id, False)
+        app.block_user(user_id=message.from_user.id)
+        app.restrict_chat_member(chat_id=tg_id.chat_id, user_id=message.from_user.id, permissions=ChatPermissions())
+        app.delete_messages(message.chat.id, message.message_id)
 
 
 @app.on_message(filters.left_chat_member & filters.chat(tg_id.chat_id))
@@ -363,80 +375,80 @@ def left_chat_member(_, message):
 
 
 @app.on_message(filters.chat(tg_id.chat_1))
-def left_chat_member(_, message):
+def left_chat_member(_):
     app.read_history(tg_id.chat_1)
 
 
 @app.on_message(filters.chat(tg_id.chat_2))
-def left_chat_member(_, message):
+def left_chat_member(_):
     app.read_history(tg_id.chat_2)
 
 
 @app.on_message(filters.chat(tg_id.chat_3))
-def left_chat_member(_, message):
+def left_chat_member(_):
     app.read_history(tg_id.chat_3)
 
 
 @app.on_message(filters.chat(tg_id.chat_4))
-def left_chat_member(_, message):
+def left_chat_member(_):
     app.read_history(tg_id.chat_4)
 
 
 @app.on_message(filters.chat(tg_id.chat_5))
-def left_chat_member(_, message):
+def left_chat_member(_):
     app.read_history(tg_id.chat_5)
 
 
 @app.on_message(filters.chat(tg_id.chat_6))
-def left_chat_member(_, message):
+def left_chat_member(_):
     app.read_history(tg_id.chat_6)
 
 
 @app.on_message(filters.chat(tg_id.chat_7))
-def left_chat_member(_, message):
+def left_chat_member(_):
     app.read_history(tg_id.chat_7)
 
 
 @app.on_message(filters.chat(tg_id.chat_8))
-def left_chat_member(_, message):
+def left_chat_member(_):
     app.read_history(tg_id.chat_8)
 
 
 @app.on_message(filters.chat(tg_id.chat_9))
-def left_chat_member(_, message):
+def left_chat_member(_):
     app.read_history(tg_id.chat_9)
 
 
 @app.on_message(filters.chat(tg_id.chat_10))
-def left_chat_member(_, message):
+def left_chat_member(_):
     app.read_history(tg_id.chat_10)
 
 
 @app.on_message(filters.chat(tg_id.chat_11))
-def left_chat_member(_, message):
+def left_chat_member(_):
     app.read_history(tg_id.chat_11)
 
 
 @app.on_message(filters.chat(tg_id.chat_12))
-def left_chat_member(_, message):
+def left_chat_member(_):
     app.read_history(tg_id.chat_12)
 
 
 @app.on_message(filters.chat(tg_id.chat_13))
-def left_chat_member(_, message):
+def left_chat_member(_):
     app.read_history(tg_id.chat_13)
 
 
 @app.on_message(filters.chat(tg_id.chat_14))
-def left_chat_member(_, message):
+def left_chat_member(_):
     app.read_history(tg_id.chat_14)
 
 
 @app.on_message(filters.chat(tg_id.chat_15))
-def left_chat_member(_, message):
+def left_chat_member(_):
     app.read_history(tg_id.chat_15)
 
 
 @app.on_message(filters.chat(tg_id.chat_16))
-def left_chat_member(_, message):
+def left_chat_member(_):
     app.read_history(tg_id.chat_16)
