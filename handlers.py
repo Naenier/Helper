@@ -18,11 +18,16 @@ db = user_database('user_database.db')
 @app.on_message(filters.command("allusers", prefixes="."))
 def help_message(_, message):
     for member in app.iter_chat_members(chat_id=tg_id.chat_id):
-        if member.user.username in "":
-            continue
+        if not db.subscriber_exists(member.user.id):
+            # если юзера нет в базе, добавляем его
+            db.add_subscriber(member.user.id, member.user.username, member.user.first_name, member.user.last_name)
         else:
-            app.send_message(chat_id="me",
-                             text=f"1{member.user.username}")
+            # если он уже есть, то обновляем данные
+            db.update_subscription(member.user.id, True)
+            db.update_username(member.user.id, member.user.username)
+            db.update_firstname(member.user.id, member.user.first_name)
+            db.update_lastname(member.user.id, member.user.last_name)
+            print(member.user.first_name)
             sleep(1)
 
 

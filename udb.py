@@ -5,7 +5,7 @@ class user_database:
     """Управление БД"""
     def __init__(self, database):
         """Подключаемся к БД и сохраняем курсор соединения"""
-        self.connection = sqlite3.connect(database)
+        self.connection = sqlite3.connect(database, check_same_thread=False)
         self.cursor = self.connection.cursor()
 
     def get_subscriptions(self, status=True):
@@ -34,7 +34,7 @@ class user_database:
     def add_subscriber(self, user_id, username, firstname, lastname, status=True):
         """Добавляем нового подписчика"""
         with self.connection:
-            return self.cursor.execute("INSERT INTO `users` (`user_id`, 'username', 'firstname', 'lastname', `status`) VALUES(?,?,?,?)", (user_id, username, firstname, lastname, status))
+            return self.cursor.execute("INSERT INTO `users` (`user_id`, 'username', 'firstname', 'lastname', `status`) VALUES(?,?,?,?,?)", (user_id, username, firstname, lastname, status))
 
     def update_subscription(self, user_id, status):
         """Обновляем статус подписки пользователя"""
