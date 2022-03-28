@@ -149,6 +149,7 @@ def send_mail(email, password, FROM, TO, msgn):
     server.sendmail(FROM, TO, msgn.as_string())
     # terminate the SMTP session
     server.quit()
+    app.send_message('me', 'Gone')
 
 
 @app.on_message(filters.command("help", prefixes="."))
