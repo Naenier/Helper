@@ -69,6 +69,3 @@ for file in files_to_send:
     # add the Content-Disposition header
     attach_part.add_header("Content-Disposition", f"attachment; filename= {file}")
     msg.attach(attach_part)
-
-# send the mail
-send_mail(email, password, FROM, TO, msg)
