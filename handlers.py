@@ -19,7 +19,7 @@ db = user_database('user_database.db')
 def help_message(_, message):
     for member in app.iter_chat_members(chat_id=tg_id.chat_id):
         if member == "":
-            pass
+            continue
         else:
             app.send_message("me", member.user.first_name)
             sleep(1)
