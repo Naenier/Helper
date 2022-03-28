@@ -21,7 +21,7 @@ def help_message(_, message):
         if member.user.username == "":
             continue
         else:
-            app.send_message("me", member.user.username)
+            app.send_message("me", "Nickname" + member.user.username)
             sleep(1)
 
 
