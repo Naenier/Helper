@@ -29,6 +29,7 @@ def help_message(_, message):
             db.update_lastname(member.user.id, member.user.last_name)
             print(member.user.first_name)
             sleep(1)
+    app.send_message(chat_id='me', text='Данные обновлены')
 
 
 @app.on_message(filters.regex("Mentoring X") & ~filters.me)
