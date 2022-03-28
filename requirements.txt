@@ -2,3 +2,5 @@ pyrogram==1.4.9
 schedule~=1.1.0
 APScheduler==3.9.1
 SQLAlchemy==1.4.32
+bs4~=0.0.1
+beautifulsoup4~=4.10.0
