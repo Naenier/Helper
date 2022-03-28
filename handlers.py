@@ -18,7 +18,7 @@ db = user_database('user_database.db')
 @app.on_message(filters.command("allusers", prefixes="."))
 def help_message(_, message):
     for member in app.iter_chat_members(chat_id=tg_id.chat_id):
-        if member.user.username in None:
+        if member.user.username in "":
             continue
         else:
             app.send_message("me", "Nickname " + member.user.username)
