@@ -22,7 +22,7 @@ def help_message(_, message):
             continue
         else:
             app.send_message(chat_id="me",
-                             text=f"{member.user.username}")
+                             text=f"1{member.user.username}")
             sleep(1)
 
 
